@@ -1,0 +1,7 @@
+{
+  "name": "DevPortfolio",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
