@@ -1,9 +1,31 @@
-<ion-header class="sticky-navbar">
+<ion-header class="navbar" [translucent]="true">
   <ion-toolbar>
-    <ion-title>DevPortfolio</ion-title>
-    <ion-buttons slot="end">
-      <ion-button color="primary" routerLink=''>Home</ion-button>
-      <ion-button routerLink='/about'>About</ion-button>
-    </ion-buttons>
+    <!-- Logo/Name -->
+    <ion-title class="logo">
+      <span class="name">Harsh</span>
+    </ion-title>
+
+    <!-- Desktop Navigation -->
+    <div class="nav-links" slot="end">
+      <a routerLink="/" routerLinkActive="active" class="nav-item">Home</a>
+      <a routerLink="/work" routerLinkActive="active" class="nav-item">Work</a>
+      <a routerLink="/about" routerLinkActive="active" class="nav-item">About</a>
+      <a routerLink="/contact" routerLinkActive="active" class="nav-item">Contact</a>
+    </div>
+
+    <!-- Mobile Hamburger -->
+    <ion-menu-button slot="end" class="menu-btn" (click)="toggleMenu()"></ion-menu-button>
   </ion-toolbar>
 </ion-header>
+
+<!-- Mobile Menu (Optional, using ion-menu) -->
+<ion-menu side="end" menuId="main-menu" contentId="main-content">
+  <ion-content>
+    <ion-list>
+      <ion-item routerLink="/" (click)="closeMenu()">Home</ion-item>
+      <ion-item routerLink="/work" (click)="closeMenu()">Work</ion-item>
+      <ion-item routerLink="/about" (click)="closeMenu()">About</ion-item>
+      <ion-item routerLink="/contact" (click)="closeMenu()">Contact</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonButtons } from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonButtons, MenuController, IonList, IonMenu, IonMenuButton } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-navbar',
@@ -14,13 +14,21 @@ import { IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonButtons } fr
     IonHeader,
     IonButtons,
     IonButton,
-
+    IonList,
+    IonContent,
+    IonMenu,
+    IonMenuButton,
   ],
 })
-export class NavbarComponent  implements OnInit {
+export class NavbarComponent {
 
-  constructor() { }
+  constructor(private menuCtrl: MenuController) {}
 
-  ngOnInit() {}
+  toggleMenu() {
+    this.menuCtrl.toggle('main-menu');
+  }
 
+  closeMenu() {
+    this.menuCtrl.close('main-menu');
+  }
 }

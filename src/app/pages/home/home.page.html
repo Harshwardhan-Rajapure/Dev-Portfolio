@@ -1,11 +1,160 @@
 <app-navbar></app-navbar>
+<ion-content id="main-content">
+  <ion-grid class="portfolio-grid">
+    <ion-row>
+      <!-- Left Big Card -->
+      <ion-col size="12" size-md="4" class="left-card-col mt-4 mb-5">
+        <ion-card
+          class="profile-card d-flex flex-column justify-content-center align-items-center"
+        >
+          <img
+            src="/assets/images/home-page-user.jpg"
+            class="profile-img"
+            alt="Harshwardhan Rajapure"
+          />
+          <h1 class="name">Harshwardhan Rajapure</h1>
+          <p class="designation">Software Developer</p>
+          <div class="social-icons">
+            <ion-icon name="logo-facebook" class="social-icon"></ion-icon>
+            <ion-icon name="logo-whatsapp" class="social-icon"></ion-icon>
+            <ion-icon name="logo-linkedin" class="social-icon"></ion-icon>
+            <ion-icon name="logo-github" class="social-icon"></ion-icon>
+            <ion-icon name="logo-instagram" class="social-icon"></ion-icon>
+          </div>
+          <ion-button
+            class="cv-button mt-4"
+            href="/assets/images/home-page-user.jpg"
+            download
+          >
+            Get in Touch
+            <ion-icon class="ml-1" name="open-outline"></ion-icon>
+          </ion-button>
+        </ion-card>
+      </ion-col>
 
-<ion-content>
-  <div class="bg-home w-100 h-100">
-    <div class="d-flex align-items-center justify-content-center h-100 text-danger opacity-175 ion-text-title">
-     <h1>
-      Coming soon...
-     </h1> 
-    </div>
-  </div>
+      <!-- Right Stacked Cards -->
+      <ion-col size="12" size-md="8" class="right-cards-col mt-4">
+
+        <ion-card class="intro-card">
+          <ion-card-content>
+            <p class="intro-text">Hello There!</p>
+            <p class="intro-text-main">
+              I’M HARSH, A
+              <span style="color: #000">SOFTWARE DEVELOPER</span> BUILDING
+              SCALABLE & EFFICIENT APPLICATIONS WITH CUTTING-EDGE TECHNOLOGIES.
+            </p>
+            <ion-button
+              class="cv-button"
+              href="/assets/images/home-page-user.jpg"
+              download
+            >
+              Download CV
+              <ion-icon class="ml-1" name="open-outline"></ion-icon>
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+
+        <!-- Tagline Card -->
+        <ion-card class="tagline-card">
+          <div class="marquee">
+            <span
+              >Code. Create. Innovate. Repeat.Code. Create. Innovate.
+              Repeat.Code. Create. Innovate. Repeat.Code. Create. Innovate.
+              Repeat.</span
+            >
+          </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Project Section  -->
+  <ion-grid  style="--ion-grid-padding: 0px;">
+    <ion-row>
+      <ion-col size="12">
+        <h2 class="project-section-title mt-6 pb-6">Projects</h2>
+      </ion-col>
+    </ion-row>
+    <ion-row class="equal-height-row mt-4 pb-9">
+      <ion-col *ngFor="let project of projects">
+        <ion-card class="project-card">
+          <img [alt]="project.title" [src]="project.image" />
+          <ion-card-header>
+            <ion-card-title> {{ project.title }} </ion-card-title>
+            <ion-card-subtitle class="text-truncate">
+              {{ project.subtitle }}
+            </ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content class="card-content">
+            <div class="text-truncate">{{ project.description }}</div>
+            <button
+              (click)="setOpen(true, project)"
+              class="read-more-btn d-flex align-items-center"
+            >
+              Project Details
+              <ion-icon
+                class="ml-1"
+                size="small"
+                name="document-text-outline"
+              ></ion-icon>
+            </button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <!-------------------- Project-Modal--------------------------->
+      <ion-modal
+        [isOpen]="isModalOpen"
+        [backdropDismiss]="true"
+        (didDismiss)="setOpen(false)">
+        <ng-template>
+          <ion-header>
+            <ion-toolbar>
+              <ion-title>{{ 'Project Details' }}</ion-title>
+              <ion-buttons slot="end">
+                <ion-button (click)="setOpen(false)">Close</ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content class="ion-padding">
+            <ion-item class="d-flex" lines="none">
+              <h1>{{ selectedProject?.title }}</h1>
+              <a [href]="selectedProject?.link" target="_blank" slot="end">
+                <ion-chip>
+                  <ion-icon name="link"></ion-icon>
+                  <ion-label>Get link</ion-label>
+                  <ion-icon name="logo-github" color="primary"></ion-icon>
+                </ion-chip>
+              </a>
+            </ion-item>
+            <h3>{{ selectedProject?.subtitle }}</h3>
+            <p>{{ selectedProject?.description }}</p>
+          </ion-content>
+        </ng-template>
+      </ion-modal>
+    </ion-row>
+  </ion-grid>
+
+<!-- Skills Section -->
+<ion-grid class="skills-grid h-100" style="--ion-grid-padding: 0px; background-color: aqua;">
+  <ion-row>
+    <ion-col size="12">
+      <h2 class="skills-section-title mt-6 mb-5">Skills</h2>
+    </ion-col>
+  </ion-row>
+  <ion-row class="skills-row">
+    <ion-col class="p-4" *ngFor="let skill of skills" size="12" size-sm="6" size-md="4" size-lg="3">
+      <div class="skill-badge">
+        <div class="skill-header">
+          <ion-img [src]="skill.logo" [alt]="skill.name" class="skill-logo"></ion-img>
+          <ion-label class="skill-name">{{ skill.name }}</ion-label>
+        </div>
+        <div class="skill-progress">
+          <div class="progress-fill" [style.width.%]="skill.proficiency"></div>
+          <span class="progress-text">{{ skill.proficiency }}%</span>
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
 </ion-content>
