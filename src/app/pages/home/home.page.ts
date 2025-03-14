@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core'
 import { RouterModule } from '@angular/router'
 import {
   IonContent,
@@ -32,10 +32,11 @@ import {
   logoLinkedin,
   logoGithub,
   logoInstagram,
-  openOutline, documentTextOutline, pin, close, link } from 'ionicons/icons'
+  openOutline, documentTextOutline, pin, close, link, cloudUploadOutline, callOutline, mailOutline, helpCircleOutline, repeatOutline, locationOutline } from 'ionicons/icons'
 import { NavbarComponent } from 'src/app/components/navbar/navbar.component'
 import { Project, Projects, Skill, Skills } from './enums/projectsInfo.enum'
 import { CommonModule } from '@angular/common'
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms'
 
 @Component({
   selector: 'app-home',
@@ -45,6 +46,7 @@ import { CommonModule } from '@angular/common'
   imports: [
     RouterModule,
     CommonModule,
+    ReactiveFormsModule,
     NavbarComponent,
     IonContent,
     IonCard,
@@ -70,6 +72,7 @@ import { CommonModule } from '@angular/common'
     IonProgressBar,
     IonText
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class HomePage {
 
@@ -77,13 +80,17 @@ export class HomePage {
   projects : Project[] = Projects
   skills: Skill[] = Skills;
   selectedProject: Project | null = null 
+  contactForm!: FormGroup;
   
-  constructor() {
-    addIcons({logoFacebook,logoWhatsapp,logoLinkedin,logoGithub,logoInstagram,openOutline,documentTextOutline,link,pin,close,});
-  }
-  
-  project () {
-    console.log('projects',this.projects)
+  constructor(private fb: FormBuilder) {
+    addIcons({logoFacebook,logoWhatsapp,logoLinkedin,logoGithub,logoInstagram,openOutline,documentTextOutline,link,cloudUploadOutline,locationOutline,repeatOutline,callOutline,mailOutline,helpCircleOutline,pin,close,});
+    this.contactForm = this.fb.group({
+      name: ['', Validators.required],
+      emailOrMobile: ['', Validators.required],
+      description: ['', Validators.required],
+      file: [null],
+      nda: [false],
+    });
   }
 
   setOpen(isOpen: boolean, project?: Project) {
@@ -93,19 +100,23 @@ export class HomePage {
     } else {
       this.selectedProject = null 
     }
-    console.log('Modal state:', this.isModalOpen, 'Selected Project:', this.selectedProject)
   }
 
-  // Calculate the stroke-dasharray for the circular progress
-  getDashArray(proficiency: number): string {
-    const circumference = 2 * Math.PI * 54; // r=54 from SVG circle
-    const progress = (proficiency / 100) * circumference;
-    return `${progress} ${circumference - progress}`;
+  onFileChange(event: any) {
+    const file = event.target.files[0];
+    if (file) {
+      this.contactForm.patchValue({ file });
+    }
   }
 
-  // Optional: Dynamic gradient for inner circle
-  getGradient(proficiency: number): string {
-    return `conic-gradient(#3498db ${proficiency}%, #e0e0e0 ${proficiency}%)`;
+  onSubmit() {
+    if (this.contactForm.valid) {
+      console.log('Form Submitted:', this.contactForm.value);
+      alert('Form Submitted')
+      this.contactForm.reset();
+    } else {
+      console.log('Form is invalid');
+      alert('OOPS! Something went wrong...')
+    }
   }
-
 }
