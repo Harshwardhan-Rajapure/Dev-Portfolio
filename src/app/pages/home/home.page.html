@@ -142,21 +142,10 @@
       </ion-col>
     </ion-row>
     <ion-row class="skills-row">
-      <ion-col
-        class="p-4"
-        *ngFor="let skill of skills"
-        size="12"
-        size-sm="6"
-        size-md="4"
-        size-lg="3"
-      >
+      <ion-col class="p-4" *ngFor="let skill of skills" size="12" size-sm="6" size-md="4" size-lg="3">
         <div class="skill-badge">
           <div class="skill-header">
-            <ion-img
-              [src]="skill.logo"
-              [alt]="skill.name"
-              class="skill-logo"
-            ></ion-img>
+            <ion-img [src]="skill.logo" [alt]="skill.name" class="skill-logo"></ion-img>
             <ion-label class="skill-name">{{ skill.name }}</ion-label>
           </div>
           <div class="skill-progress">
