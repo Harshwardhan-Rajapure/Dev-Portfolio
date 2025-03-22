@@ -21,11 +21,7 @@
             <ion-icon name="logo-github" class="social-icon"></ion-icon>
             <ion-icon name="logo-instagram" class="social-icon"></ion-icon>
           </div>
-          <ion-button
-            class="cv-button mt-4"
-            href="/assets/images/home-page-user.jpg"
-            download
-          >
+            <ion-button class="cv-button mt-4"  (click)="scrollToContact()">
             Get in Touch
             <ion-icon class="ml-1" name="open-outline"></ion-icon>
           </ion-button>
@@ -158,15 +154,13 @@
   <!------------------------Get in Touch Section  -------------------------->
 
   <!-- Get in Touch Section -->
-  <ion-grid class="contact-grid" style="background-color: #57B4BA">
+  <ion-grid class="contact-grid" id="contactSection" style="background-color: #57B4BA">
     <ion-row>
       <ion-col size="12">
         <h2 class="contact-title mt-6 mb-5">Get in Touch</h2>
       </ion-col>
     </ion-row>
-    <ion-row
-      class="contact-row d-flex align-items-center justify-content-center"
-    >
+    <ion-row class="contact-row d-flex align-items-center justify-content-center">
       <!-- Form Column -->
       <ion-col size="12" size-md="5">
         <p class="contact-description mb-4">
@@ -261,4 +255,23 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+
+  <!-- Fixed Floating Button -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button size="small" color="success">
+      <ion-icon name="chatbubble-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button size="small" href="https://wa.me/918767146295" target="_blank">
+        <ion-icon name="logo-whatsapp"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button size="small" href="https://linkedin.com/in/yourprofile" target="_blank">
+        <ion-icon name="logo-linkedin"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button size="small" (click)="scrollToContact()">
+        <ion-icon name="chatbubble-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
 </ion-content>

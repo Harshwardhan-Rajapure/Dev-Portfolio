@@ -32,7 +32,7 @@ import {
   logoLinkedin,
   logoGithub,
   logoInstagram,
-  openOutline, documentTextOutline, pin, close, link, cloudUploadOutline, callOutline, mailOutline, helpCircleOutline, repeatOutline, locationOutline, cloudDownloadOutline } from 'ionicons/icons'
+  openOutline, documentTextOutline, pin, close, link, cloudUploadOutline, callOutline, mailOutline, helpCircleOutline, repeatOutline, locationOutline, cloudDownloadOutline, chatbubbleOutline, add, colorPalette, globe } from 'ionicons/icons'
 import { NavbarComponent } from 'src/app/components/navbar/navbar.component'
 import { Project, Projects, Skill, Skills } from './enums/projectsInfo.enum'
 import { CommonModule } from '@angular/common'
@@ -83,7 +83,7 @@ export class HomePage {
   contactForm!: FormGroup;
   
   constructor(private fb: FormBuilder) {
-    addIcons({logoFacebook,logoWhatsapp,logoLinkedin,logoGithub,logoInstagram,openOutline,cloudDownloadOutline,documentTextOutline,link,cloudUploadOutline,locationOutline,repeatOutline,callOutline,mailOutline,helpCircleOutline,pin,close,});
+    addIcons({logoFacebook,logoWhatsapp,logoLinkedin,logoGithub,logoInstagram,openOutline,cloudDownloadOutline,documentTextOutline,link,cloudUploadOutline,locationOutline,repeatOutline,callOutline,mailOutline,chatbubbleOutline,add,colorPalette,globe,helpCircleOutline,pin,close,});
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
       emailOrMobile: ['', Validators.required],
@@ -117,6 +117,13 @@ export class HomePage {
     } else {
       console.log('Form is invalid');
       alert('OOPS! Something went wrong...')
+    }
+  }
+
+  scrollToContact() {
+    const contactSection = document.getElementById('contactSection');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 }

@@ -584,3 +584,23 @@ ion-button[color="primary"] {
     flex-direction: row;
   }
 }
+
+// ----------------------Fixed Floating Button----------------------- 
+ion-fab {
+  margin: 15px; 
+}
+
+ion-fab-button[size="small"] {
+  --border-radius: 50%;
+  width: 40px; 
+  height: 40px;
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+ion-fab-button[size="small"] ion-icon {
+  font-size: 18px; 
+}
+
+ion-fab-list ion-fab-button {
+  margin: 5px 0; 
+}
