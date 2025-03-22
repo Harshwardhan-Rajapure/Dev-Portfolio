@@ -86,7 +86,7 @@
 
     .marquee {
       display: flex;
-      width: 200%; 
+      width: 200%;
       animation: marquee 10s linear infinite;
 
       span {
@@ -102,7 +102,7 @@
   @media (max-width: 768px) {
     .left-card-col,
     .right-cards-col {
-      size: 12; 
+      size: 12;
     }
     .right-cards-col {
       margin-top: 20px;
@@ -112,9 +112,9 @@
 
 @media (min-width: 768px) {
   .portfolio-grid {
-     height: calc(100vh - 56.8px) !important;
-   }
- }
+    height: calc(100vh - 56.8px) !important;
+  }
+}
 
 @keyframes tiltIn {
   from {
@@ -142,28 +142,28 @@
   padding: 20px;
 
   .intro-text-main {
-    font-family: "Roboto", sans-serif; 
-    font-weight: 700; 
-    font-size: 2rem; 
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
     color: #3c3c3c;
-    text-transform: uppercase; 
-    letter-spacing: 2px; 
+    text-transform: uppercase;
+    letter-spacing: 2px;
     line-height: 1.2;
     margin-bottom: 20px;
-    text-align: center; 
+    text-align: center;
 
     @media (max-width: 768px) {
       font-size: 1.5rem;
-      letter-spacing: 1px; 
+      letter-spacing: 1px;
     }
   }
 }
 
 .cv-button {
-  --background: #E8C6C6; 
-  --color: #000; 
+  --background: #e8c6c6;
+  --color: #000;
   --border-radius: 25px;
-  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   --transition: all 0.3s ease-in-out;
   width: 100%;
   max-width: 200px;
@@ -178,7 +178,7 @@
 }
 
 .cv-button:hover {
-  --background: #F6D6D6; 
+  --background: #f6d6d6;
   transform: scale(1.009);
   --box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
@@ -196,11 +196,10 @@
 }
 
 .project-section-title:hover {
-  --background: #45a049; 
+  --background: #45a049;
   transform: scale(1.04);
   --box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
-
 
 .equal-height-row ion-col {
   display: flex;
@@ -284,12 +283,16 @@
 }
 
 .project-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(46, 204, 113, 0.1));
+  background: linear-gradient(
+    135deg,
+    rgba(52, 152, 219, 0.1),
+    rgba(46, 204, 113, 0.1)
+  );
   opacity: 0;
   transition: opacity 0.4s ease;
   pointer-events: none;
@@ -298,13 +301,6 @@
 .project-card:hover::before {
   opacity: 1;
 }
-
-
-
-
-
-
-
 
 // --------------------Project-Modal---------------------
 
@@ -343,7 +339,7 @@ ion-modal a:hover {
 }
 
 .skills-section-title {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: clamp(1.8rem, 6vw, 2.5em);
   font-weight: 700;
   text-align: center;
@@ -365,7 +361,7 @@ ion-modal a:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   width: 100%;
-  max-width: 250px; 
+  max-width: 250px;
 }
 
 .skill-badge:hover {
@@ -425,7 +421,7 @@ ion-modal a:hover {
 }
 
 .contact-title {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: clamp(1.8rem, 6vw, 2.5em);
   font-weight: 700;
   text-align: center;
@@ -530,7 +526,6 @@ ion-button[color="primary"] {
   font-size: 1rem;
   color: #000;
   display: flex;
-  // justify-content: center;
   align-items: center;
 }
 
@@ -554,7 +549,6 @@ ion-button[color="primary"] {
   text-decoration: underline;
 }
 
-/* Responsive Adjustments */
 @media (max-width: 767px) {
   .contact-row {
     flex-direction: column;
