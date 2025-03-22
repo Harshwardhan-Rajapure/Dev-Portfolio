@@ -229,14 +229,12 @@
   padding-bottom: 16px;
 }
 
-/* New modern hover effect */
 .project-card:hover {
   transform: scale(1.03);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   border: 2px solid #3498db;
 }
 
-/* Image hover effect */
 .project-card img {
   transition: all 0.4s ease;
 }
@@ -246,7 +244,6 @@
   transform: scale(1.02);
 }
 
-/* Card header styling */
 .project-card ion-card-header {
   padding-bottom: 8px;
 }
@@ -261,12 +258,10 @@
   color: #3498db;
 }
 
-/* Card subtitle styling */
 .project-card ion-card-subtitle {
   color: #7f8c8d;
 }
 
-/* Read More button styling */
 .read-more-btn {
   margin-top: 12px;
   padding: 8px 20px;
@@ -288,14 +283,12 @@
   background: linear-gradient(45deg, #2ecc71, #3498db);
 }
 
-/* Optional: Add a subtle overlay on hover */
 .project-card::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  // height: 100%;
   background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(46, 204, 113, 0.1));
   opacity: 0;
   transition: opacity 0.4s ease;
