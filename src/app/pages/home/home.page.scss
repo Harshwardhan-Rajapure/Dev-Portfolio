@@ -156,7 +156,7 @@
 }
 
 .cv-button {
-  --background: #F6D6D9; 
+  --background: #E8C6C6; 
   --color: #000; /* White text */
   --border-radius: 25px; /* Rounded corners */
   --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow */
@@ -170,11 +170,12 @@
   align-items: center;
   justify-content: space-evenly !important;
   gap: 8px;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
 
 .cv-button:hover {
-  --background: #F6D6D1; 
+  --background: #F6D6D6; 
+  transform: scale(1.009);
   --box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
