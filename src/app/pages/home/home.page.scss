@@ -1,5 +1,4 @@
 .portfolio-grid {
-  // height: 100vh;
   padding: 0 !important;
   margin: 0 !important;
   background-color: #ece5d8;
@@ -11,7 +10,6 @@
   }
 
   .profile-card {
-    // background: linear-gradient(135deg, #1e3a8a, #2563eb);
     border-radius: 20px;
     text-align: center;
     padding: 50px;
@@ -104,13 +102,19 @@
   @media (max-width: 768px) {
     .left-card-col,
     .right-cards-col {
-      size: 12; /* Full width on mobile */
+      size: 12; 
     }
     .right-cards-col {
       margin-top: 20px;
     }
   }
 }
+
+@media (min-width: 768px) {
+  .portfolio-grid {
+     height: calc(100vh - 56.8px) !important;
+   }
+ }
 
 @keyframes tiltIn {
   from {
