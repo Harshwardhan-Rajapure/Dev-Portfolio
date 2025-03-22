@@ -86,7 +86,7 @@
 
     .marquee {
       display: flex;
-      width: 200%; /* Double width for seamless loop */
+      width: 200%; 
       animation: marquee 10s linear infinite;
 
       span {
@@ -142,26 +142,26 @@
   padding: 20px;
 
   .intro-text-main {
-    font-family: "Roboto", sans-serif; // Default Ionic font, can be replaced with Montserrat or custom font
-    font-weight: 700; // Bold weight to match the image
-    font-size: 2rem; // Large, impactful size (adjust as needed for mobile)
+    font-family: "Roboto", sans-serif; 
+    font-weight: 700; 
+    font-size: 2rem; 
     color: #3c3c3c;
-    text-transform: uppercase; // Uppercase for impact
-    letter-spacing: 2px; // Wide letter spacing for modern look
-    line-height: 1.2; // Tight line height for compactness
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    line-height: 1.2;
     margin-bottom: 20px;
-    text-align: center; // Centered like the image
+    text-align: center; 
 
     @media (max-width: 768px) {
-      font-size: 1.5rem; // Smaller on mobile for readability
-      letter-spacing: 1px; // Reduce spacing on mobile
+      font-size: 1.5rem;
+      letter-spacing: 1px; 
     }
   }
 }
 
 .cv-button {
   --background: #E8C6C6; 
-  --color: #000; /* White text */
+  --color: #000; 
   --border-radius: 25px; /* Rounded corners */
   --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow */
   --transition: all 0.3s ease-in-out;
