@@ -2,7 +2,7 @@
   // height: 100vh;
   padding: 0 !important;
   margin: 0 !important;
-  background-color: #eef3f1;
+  background-color: #ece5d8;
 
   .left-card-col {
     display: flex;
@@ -71,6 +71,7 @@
     border-radius: 15px;
     border-left: 5px solid #2563eb;
     padding: 20px;
+    background: #96c4cb;
 
     .intro-text {
       font-size: 1.1rem;
@@ -155,7 +156,7 @@
 }
 
 .cv-button {
-  --background: #fff; /* Green background */
+  --background: #F6D6D9; 
   --color: #000; /* White text */
   --border-radius: 25px; /* Rounded corners */
   --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow */
@@ -173,8 +174,7 @@
 }
 
 .cv-button:hover {
-  --background: #45a049; /* Darker green on hover */
-  transform: scale(1.04);
+  --background: #F6D6D1; 
   --box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
