@@ -27,7 +27,7 @@
     }
 
     .name {
-      font-size: 2rem;
+      font-size: 1.7rem;
       font-weight: bold;
       background: #1f2937;
       -webkit-background-clip: text;
@@ -302,10 +302,14 @@
   opacity: 1;
 }
 
+.project-section {
+  // background: #C1D8C3;   :) Can use bg-color for other section
+  background: #E6B2BA;
+}
+
 @media (min-width: 992px) {
   .project-section {
     height: calc(100vh - 56.8px) !important;
-    background: red;
   }
 }
 
