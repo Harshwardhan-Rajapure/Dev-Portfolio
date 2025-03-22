@@ -302,6 +302,13 @@
   opacity: 1;
 }
 
+@media (min-width: 992px) {
+  .project-section {
+    height: calc(100vh - 56.8px) !important;
+    background: red;
+  }
+}
+
 // --------------------Project-Modal---------------------
 
 ion-modal ion-content {
