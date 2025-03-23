@@ -4,28 +4,22 @@
     <ion-row>
       <!-- Left Big Card -->
       <ion-col size="12" size-md="4" class="left-card-col mt-4 mb-5">
-        <ion-card
-          class="profile-card d-flex flex-column justify-content-center align-items-center"
-        >
-          <img
-            src="/assets/images/home-page-user.jpg"
-            class="profile-img"
-            alt="Harshwardhan Rajapure"
-          />
+        <ion-card class="profile-card d-flex flex-column justify-content-center align-items-center">
+          <img src="/assets/images/home-page-user.jpg" class="profile-img" alt="Harshwardhan Rajapure" />
           <h1 class="name">Harshwardhan Rajapure</h1>
           <p class="designation">Software Developer</p>
           <div class="social-icons">
-            <ion-icon name="logo-facebook" class="social-icon"></ion-icon>
-            <a href="https://wa.me/918767146295" target="_blank" class="social-icon">
-              <ion-icon name="logo-whatsapp"></ion-icon>
-            </a>
-            <a href="https://github.com/Harshwardhan-Rajapure" target="_blank" class="social-icon">
-              <ion-icon name="logo-github" class="social-icon"></ion-icon>
-            </a>
-            <ion-icon name="logo-linkedin" class="social-icon"></ion-icon>
-            <a href="https://www.instagram.com/harsh_1812__?igsh=MTkxdWFhZm8ycnE3MA==" target="_blank" class="social-icon">
-              <ion-icon name="logo-instagram" class="social-icon"></ion-icon>
-            </a>
+              <ion-icon name="logo-facebook" class="social-icon"></ion-icon>
+              <a href="https://wa.me/918767146295" target="_blank" class="social-icon">
+                <ion-icon name="logo-whatsapp"></ion-icon>
+              </a>
+              <a href="https://github.com/Harshwardhan-Rajapure" target="_blank" class="social-icon">
+                <ion-icon name="logo-github" class="social-icon"></ion-icon>
+              </a>
+              <ion-icon name="logo-linkedin" class="social-icon"></ion-icon>
+              <a href="https://www.instagram.com/harsh_1812__?igsh=MTkxdWFhZm8ycnE3MA==" target="_blank" class="social-icon">
+                <ion-icon name="logo-instagram" class="social-icon"></ion-icon>
+              </a>
           </div>
             <ion-button class="cv-button mt-4"  (click)="scrollToContact()">
             Get in Touch
@@ -44,10 +38,7 @@
               <span style="color: #000">SOFTWARE DEVELOPER</span> BUILDING
               SCALABLE & EFFICIENT APPLICATIONS WITH CUTTING-EDGE TECHNOLOGIES.
             </p>
-            <ion-button
-              class="cv-button"
-              href="/assets/images/home-page-user.jpg"
-              download>
+             <ion-button class="cv-button" href="/assets/images/home-page-user.jpg" download>
               Download CV
               <ion-icon name="cloud-download-outline" class=" ml-1"></ion-icon>           
             </ion-button>
@@ -57,11 +48,10 @@
         <!-- Tagline Card -->
         <ion-card class="tagline-card">
           <div class="marquee">
-            <span
-              >Code. Create. Innovate. Repeat.Code. Create. Innovate.
+            <span>Code. Create. Innovate. Repeat.Code. Create. Innovate.
               Repeat.Code. Create. Innovate. Repeat.Code. Create. Innovate.
-              Repeat.</span
-            >
+              Repeat.
+            </span>
           </div>
         </ion-card>
       </ion-col>
@@ -87,11 +77,8 @@
           </ion-card-header>
           <ion-card-content class="card-content">
             <div class="text-truncate">{{ project.description }}</div>
-            <button
-              (click)="setOpen(true, project)"
-              class="read-more-btn d-flex align-items-center"
-            >
-              Project Details
+              <button (click)="setOpen(true, project)" class="read-more-btn d-flex align-items-center" >
+                Project Details
               <ion-icon class="ml-1" size="small" name="document-text-outline"></ion-icon>
             </button>
           </ion-card-content>
@@ -100,11 +87,7 @@
     </ion-row>
   </ion-grid>
   <!-------------------- Project-Modal--------------------------->
-  <ion-modal
-    [isOpen]="isModalOpen"
-    [backdropDismiss]="true"
-    (didDismiss)="setOpen(false)"
-  >
+  <ion-modal [isOpen]="isModalOpen" [backdropDismiss]="true" (didDismiss)="setOpen(false)">
     <ng-template>
       <ion-header>
         <ion-toolbar>
@@ -146,10 +129,7 @@
             <ion-label class="skill-name">{{ skill.name }}</ion-label>
           </div>
           <div class="skill-progress">
-            <div
-              class="progress-fill"
-              [style.width.%]="skill.proficiency"
-            ></div>
+            <div class="progress-fill" [style.width.%]="skill.proficiency"></div>
             <span class="progress-text">{{ skill.proficiency }}%</span>
           </div>
         </div>
@@ -158,8 +138,6 @@
   </ion-grid>
 
   <!------------------------Get in Touch Section  -------------------------->
-
-  <!-- Get in Touch Section -->
   <ion-grid class="contact-grid" id="contactSection" style="background-color: #57B4BA">
     <ion-row>
       <ion-col size="12">
@@ -167,7 +145,6 @@
       </ion-col>
     </ion-row>
     <ion-row class="contact-row d-flex align-items-center justify-content-center">
-      <!-- Form Column -->
       <ion-col size="12" size-md="5">
         <p class="contact-description mb-4">
           "I'd love to hear from you! Whether you have questions, want to
@@ -177,24 +154,14 @@
         </p>
         <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
           <ion-item class="contact-input mb-3">
-            <ion-input
-              placeholder="Name"
-              type="text"
-              [clearInput]="true"
-              [value]="contactForm.get('name')?.value"
-              (ionInput)="contactForm.get('name')?.setValue($event.target.value)"
-              required
-            ></ion-input>
+            <ion-input placeholder="Name" type="text" [clearInput]="true" [value]="contactForm.get('name')?.value"
+                       (ionInput)="contactForm.get('name')?.setValue($event.target.value)" required>
+            </ion-input>
           </ion-item>
           <ion-item class="contact-input mb-3">
-            <ion-input
-              placeholder="Email or Mobile"
-              type="text"
-              [clearInput]="true"
-              [value]="contactForm.get('emailOrMobile')?.value"
-              (ionInput)="contactForm.get('emailOrMobile')?.setValue($event.target.value)"
-              required
-            ></ion-input>
+            <ion-input placeholder="Email or Mobile" type="text" [clearInput]="true" [value]="contactForm.get('emailOrMobile')?.value"
+                       (ionInput)="contactForm.get('emailOrMobile')?.setValue($event.target.value)" required>
+            </ion-input>
           </ion-item>
           <ion-item class="contact-input mb-3">
             <ion-textarea
@@ -211,8 +178,7 @@
               type="file"
               (change)="onFileChange($event)"
               accept=".pdf,.doc,.docx"
-              class="file-input"
-            />
+              class="file-input" />
             <ion-label class="file-label">
               <ion-icon name="cloud-upload-outline" slot="start"></ion-icon>
               Upload Additional File
@@ -222,15 +188,13 @@
             <ion-checkbox
               slot="start"
               [checked]="contactForm.get('nda')?.value"
-              (ionChange)="contactForm.get('nda')?.setValue($event.detail.checked)"
-            ></ion-checkbox>
+              (ionChange)="contactForm.get('nda')?.setValue($event.detail.checked)">
+            </ion-checkbox>
             <ion-label class="nda-label">
               I WANT TO PROTECT MY DATA BY SIGNING AN NDA
             </ion-label>
           </ion-item>
-          <ion-button type="submit" expand="block" color="primary"
-            >SUBMIT</ion-button
-          >
+          <ion-button type="submit" expand="block" color="primary">SUBMIT</ion-button>
         </form>
       </ion-col>
       <!-- Map and Contact Info Column -->
@@ -241,8 +205,8 @@
             height="300"
             style="border: 0"
             allowfullscreen=""
-            loading="lazy"
-          ></iframe>
+            loading="lazy">
+          </iframe>
         </div>
         <div class="contact-details">
           <p class="company-address mb-2">
@@ -267,18 +231,16 @@
     <ion-fab-button class="custom-size" color="success">
       <ion-icon name="chatbubble-outline"></ion-icon>
     </ion-fab-button>
-    <ion-fab-list side="top">
-      <ion-fab-button size="small" (click)="scrollToContact()">
-        <ion-icon name="chatbubble-outline"></ion-icon>
-      </ion-fab-button>
-      <ion-fab-button color="primary" size="small" href="https://linkedin.com/in/yourprofile" target="_blank">
-        <ion-icon name="logo-linkedin"></ion-icon>
-      </ion-fab-button>
-      <ion-fab-button color="success" size="small" href="https://wa.me/918767146295" target="_blank">
-        <ion-icon name="logo-whatsapp"></ion-icon>
-      </ion-fab-button>
-
-    </ion-fab-list>
+      <ion-fab-list side="top">
+        <ion-fab-button size="small" (click)="scrollToContact()">
+          <ion-icon name="chatbubble-outline"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button color="primary" size="small" href="https://linkedin.com/in/yourprofile" target="_blank">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button color="success" size="small" href="https://wa.me/918767146295" target="_blank">
+          <ion-icon name="logo-whatsapp"></ion-icon>
+        </ion-fab-button>
+      </ion-fab-list>
   </ion-fab>
-
 </ion-content>
