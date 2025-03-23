@@ -141,13 +141,13 @@
   <ion-grid class="contact-grid" id="contactSection" style="background-color: #57B4BA">
     <ion-row>
       <ion-col size="12">
-        <h2 class="contact-title mt-6 mb-5">Get in Touch</h2>
+        <h2 class="contact-title mt-4 mb-5">Get in Touch</h2>
       </ion-col>
     </ion-row>
-    <ion-row class="contact-row d-flex align-items-center justify-content-center">
+    <ion-row class="contact-row d-flex align-items-start justify-content-center">
       <ion-col size="12" size-md="5">
-        <p class="contact-description mb-4">
-          "I'd love to hear from you! Whether you have questions, want to
+        <p class="contact-description mt-0 mb-4">
+          "I'd love to hear from you! Whether you want to
           connect, or just say hello, <b>drop me a message</b> using the form
           below. I'll get back to you as soon as possible and look forward to
           our conversation."
@@ -166,33 +166,12 @@
           <ion-item class="contact-input mb-3">
             <ion-textarea
               placeholder="Let's talk about your idea"
-              rows="5"
+              rows="2"
               autoGrow="true"
               [value]="contactForm.get('description')?.value"
               (ionInput)="contactForm.get('description')?.setValue($event.target.value)"
               required
             ></ion-textarea>
-          </ion-item>
-          <ion-item class="contact-input mb-3">
-            <input
-              type="file"
-              (change)="onFileChange($event)"
-              accept=".pdf,.doc,.docx"
-              class="file-input" />
-            <ion-label class="file-label">
-              <ion-icon name="cloud-upload-outline" slot="start"></ion-icon>
-              Upload Additional File
-            </ion-label>
-          </ion-item>
-          <ion-item lines="none" class="mb-3">
-            <ion-checkbox
-              slot="start"
-              [checked]="contactForm.get('nda')?.value"
-              (ionChange)="contactForm.get('nda')?.setValue($event.detail.checked)">
-            </ion-checkbox>
-            <ion-label class="nda-label">
-              I WANT TO PROTECT MY DATA BY SIGNING AN NDA
-            </ion-label>
           </ion-item>
           <ion-button type="submit" expand="block" color="primary">SUBMIT</ion-button>
         </form>
