@@ -1,5 +1,5 @@
 import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core'
-import { RouterModule } from '@angular/router'
+import { ActivatedRoute, RouterModule } from '@angular/router'
 import {
   IonContent,
   IonCard,
@@ -82,7 +82,7 @@ export class HomePage {
   selectedProject: Project | null = null 
   contactForm!: FormGroup;
   
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private route: ActivatedRoute) {
     addIcons({logoFacebook,logoWhatsapp,logoLinkedin,logoGithub,logoInstagram,openOutline,cloudDownloadOutline,documentTextOutline,link,cloudUploadOutline,locationOutline,repeatOutline,callOutline,mailOutline,chatbubbleOutline,add,colorPalette,globe,helpCircleOutline,pin,close,});
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
@@ -93,19 +93,23 @@ export class HomePage {
     });
   }
 
+  ngOnInit() {
+    this.route.fragment.subscribe(fragment => {
+      if (fragment) {
+        const element = document.getElementById(fragment);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+  }
+
   setOpen(isOpen: boolean, project?: Project) {
     this.isModalOpen = isOpen
     if (isOpen && project) {
       this.selectedProject = project
     } else {
       this.selectedProject = null 
-    }
-  }
-
-  onFileChange(event: any) {
-    const file = event.target.files[0];
-    if (file) {
-      this.contactForm.patchValue({ file });
     }
   }
 

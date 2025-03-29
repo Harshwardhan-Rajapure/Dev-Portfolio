@@ -1,31 +1,75 @@
 <ion-header class="navbar" [translucent]="true">
   <ion-toolbar>
     <!-- Logo/Name -->
-    <ion-title class="logo">
-      <span class="name">Harsh</span>
+    <ion-title class="logo" routerLink="/" fragment="homeSection">
+      <div class="logo-container">
+        <span class="name">Harsh</span>
+        <div class="logo-underline"></div>
+      </div>
     </ion-title>
 
     <!-- Desktop Navigation -->
     <div class="nav-links" slot="end">
-      <a routerLink="/" routerLinkActive="active" class="nav-item">Home</a>
-      <a routerLink="/work" routerLinkActive="active" class="nav-item">Work</a>
-      <a routerLink="/about" routerLinkActive="active" class="nav-item">About</a>
-      <a routerLink="/contact" routerLinkActive="active" class="nav-item">Contact</a>
+      <a routerLink="/" fragment="homeSection" class="nav-item">
+        <span class="nav-text">Home</span>
+        <span class="nav-hover-effect"></span>
+      </a>
+      <a routerLink="/" fragment="projectSection" class="nav-item">
+        <span class="nav-text">Projects</span>
+        <span class="nav-hover-effect"></span>
+      </a>
+      <a routerLink="/" fragment="skillsSection" class="nav-item">
+        <span class="nav-text">Skills</span>
+        <span class="nav-hover-effect"></span>
+      </a>
+      <a routerLink="/" fragment="contactSection" class="nav-item">
+        <span class="nav-text">Contact</span>
+        <span class="nav-hover-effect"></span>
+      </a>
     </div>
 
     <!-- Mobile Hamburger -->
-    <ion-menu-button slot="end" class="menu-btn" (click)="toggleMenu()"></ion-menu-button>
+    <ion-menu-button slot="end" class="menu-btn" (click)="toggleMenu()">
+      <div class="hamburger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </ion-menu-button>
   </ion-toolbar>
 </ion-header>
 
-<!-- Mobile Menu (Optional, using ion-menu) -->
-<ion-menu side="end" menuId="main-menu" contentId="main-content">
+<!-- Mobile Menu -->
+<ion-menu side="end" menuId="main-menu" contentId="main-content" class="mobile-menu">
   <ion-content>
-    <ion-list>
-      <ion-item routerLink="/" (click)="closeMenu()">Home</ion-item>
-      <ion-item routerLink="/work" (click)="closeMenu()">Work</ion-item>
-      <ion-item routerLink="/about" (click)="closeMenu()">About</ion-item>
-      <ion-item routerLink="/contact" (click)="closeMenu()">Contact</ion-item>
-    </ion-list>
+    <div class="mobile-menu-container">
+      <div class="mobile-logo">
+        <span class="name">Harsh</span>
+        <div class="logo-underline"></div>
+      </div>
+      
+      <div class="mobile-nav-links">
+        <a routerLink="/" (click)="closeMenu()" fragment="homeSection" class="mobile-nav-item">
+          <span class="mobile-nav-text">Home</span>
+          <span class="mobile-nav-hover-effect"></span>
+        </a>
+        <a routerLink="/" (click)="closeMenu()" fragment="projectSection" class="mobile-nav-item">
+          <span class="mobile-nav-text">Projects</span>
+          <span class="mobile-nav-hover-effect"></span>
+        </a>
+        <a routerLink="/" (click)="closeMenu()" fragment="skillsSection" class="mobile-nav-item">
+          <span class="mobile-nav-text">Skills</span>
+          <span class="mobile-nav-hover-effect"></span>
+        </a>
+        <a routerLink="/" (click)="closeMenu()" fragment="contactSection" class="mobile-nav-item">
+          <span class="mobile-nav-text">Contact</span>
+          <span class="mobile-nav-hover-effect"></span>
+        </a>
+      </div>
+      
+      <div class="mobile-menu-footer">
+        <p>© 2025 Harsh</p>
+      </div>
+    </div>
   </ion-content>
 </ion-menu>

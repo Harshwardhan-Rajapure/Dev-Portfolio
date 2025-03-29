@@ -1,3 +1,6 @@
+ion-content#main-content {
+  --offset-top: 70px; 
+}
 .portfolio-grid {
   padding: 0 !important;
   margin: 0 !important;
@@ -112,7 +115,7 @@
 
 @media (min-width: 768px) {
   .portfolio-grid {
-    height: calc(100vh - 56.8px) !important;
+    height: calc(100vh - 70px) !important;
   }
 }
 
@@ -309,17 +312,17 @@
 
 @media (min-width: 992px) {
   .project-section {
-    height: calc(100vh - 56.8px) !important;
+    height: calc(100vh - 70px) !important;
   }
   
   .skills-grid {
-    height: calc(100vh - 56.8px) !important;
+    height: calc(100vh - 70px) !important;
   }
 }
 
 @media (min-width: 768px) {
   .get-in-touch-section {
-    height: calc(100vh - 56.8px) !important;
+    height: calc(100vh - 70px) !important;
   }
 }
 
@@ -587,6 +590,10 @@ ion-button[color="primary"] {
 
   .map-container {
     height: 200px;
+  }
+
+  .pb-6 {
+    padding-bottom: 0 !important;
   }
 }
 
