@@ -155,28 +155,35 @@
             below. I'll get back to you as soon as possible and look forward to
             our conversation."
           </p>
-          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-            <ion-item class="contact-input mb-3">
-              <ion-input placeholder="Name" type="text" [clearInput]="true" [value]="contactForm.get('name')?.value"
-                        (ionInput)="contactForm.get('name')?.setValue($event.target.value)" required>
-              </ion-input>
-            </ion-item>
-            <ion-item class="contact-input mb-3">
-              <ion-input placeholder="Email or Mobile" type="text" [clearInput]="true" [value]="contactForm.get('emailOrMobile')?.value"
-                        (ionInput)="contactForm.get('emailOrMobile')?.setValue($event.target.value)" required>
-              </ion-input>
-            </ion-item>
-            <ion-item class="contact-input mb-3">
-              <ion-textarea
-                placeholder="Let's talk about your idea"
-                rows="2"
-                autoGrow="true"
-                [value]="contactForm.get('description')?.value"
-                (ionInput)="contactForm.get('description')?.setValue($event.target.value)"
-                required
-              ></ion-textarea>
-            </ion-item>
-            <ion-button type="submit" expand="block" color="primary">SUBMIT</ion-button>
+          <form action="https://formspree.io/f/myzedjqe" method="POST" (ngSubmit)="onSubmit()">
+            <ion-input 
+              label="Enter Name" 
+              label-placement="floating" 
+              fill="solid" 
+              placeholder="..." 
+              name="name">
+            </ion-input>
+            <br>
+            <ion-input 
+              type="email" 
+              label-placement="floating" 
+              label="Enter Email" 
+              fill="solid" 
+              placeholder="..." 
+              name="email">
+            </ion-input>
+            <br>
+            <ion-textarea 
+              rows="2" 
+              label="Let's talk about your idea:" 
+              autoGrow="true" 
+              label-placement="floating" 
+              placeholder="E.g., 'A website redesign with a minimalist aesthetic and interactive animations'" 
+              fill="solid" 
+              name="message">
+            </ion-textarea>
+            <br>
+            <ion-button type="submit" expand="block" color="dark">SUBMIT</ion-button>
           </form>
         </ion-col>
         <!-- Map and Contact Info Column -->
