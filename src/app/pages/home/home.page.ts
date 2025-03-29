@@ -52,7 +52,6 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
     IonCard,
     IonRow,
     IonIcon,
-    IonFooter,
     IonCol,
     IonGrid,
     IonButton,
@@ -69,8 +68,6 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
     IonChip,
     IonItem,
     IonImg,
-    IonProgressBar,
-    IonText
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
