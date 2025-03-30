@@ -65,7 +65,13 @@ ion-content#main-content {
   .right-cards-col {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 60px;
+  }
+
+  @media (max-width: 768px) {
+    .right-cards-col {
+      gap: 10px !important;
+    }
   }
 
   .intro-card {
@@ -87,7 +93,7 @@ ion-content#main-content {
     overflow: hidden;
     padding: 0;
     width: 100%;
-    max-width: 880px;
+    max-width: 970px;
     margin: 20px auto;
   }
 
@@ -101,7 +107,7 @@ ion-content#main-content {
     font-size: 1.2rem;
     color: #f59e0b;
     white-space: nowrap;
-    padding: 15px;
+    padding: 20px;
     display: inline-block;
     animation: marquee-rtl 12s linear infinite;
   }
