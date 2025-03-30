@@ -4,7 +4,6 @@ import {
   IonCard,
   IonRow,
   IonIcon,
-  IonFooter,
   IonCol,
   IonGrid,
   IonButton,
@@ -23,7 +22,9 @@ import {
   IonImg,
   IonFab,
   IonFabButton,
-  IonFabList
+  IonFabList,
+  IonInput,
+  IonTextarea
 } from '@ionic/angular/standalone'
 import { addIcons } from 'ionicons'
 import {
@@ -71,7 +72,9 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
     IonImg,
     IonFab,
     IonFabButton,
-    IonFabList
+    IonFabList,
+    IonInput,
+    IonTextarea
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
