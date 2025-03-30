@@ -1,4 +1,3 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core'
 import { ActivatedRoute, RouterModule } from '@angular/router'
 import {
   IonContent,
@@ -22,8 +21,9 @@ import {
   IonChip,
   IonItem,
   IonImg,
-  IonProgressBar,
-  IonText
+  IonFab,
+  IonFabButton,
+  IonFabList
 } from '@ionic/angular/standalone'
 import { addIcons } from 'ionicons'
 import {
@@ -37,6 +37,7 @@ import { NavbarComponent } from 'src/app/components/navbar/navbar.component'
 import { Project, Projects, Skill, Skills } from './enums/projectsInfo.enum'
 import { CommonModule } from '@angular/common'
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms'
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
 
 @Component({
   selector: 'app-home',
@@ -68,6 +69,9 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
     IonChip,
     IonItem,
     IonImg,
+    IonFab,
+    IonFabButton,
+    IonFabList
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
