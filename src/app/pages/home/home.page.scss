@@ -86,19 +86,32 @@ ion-content#main-content {
     border-radius: 15px;
     overflow: hidden;
     padding: 0;
+    width: 100%;
+    max-width: 880px;
+    margin: 20px auto;
+  }
 
-    .marquee {
-      display: flex;
-      width: 200%;
-      animation: marquee 10s linear infinite;
+  .marquee {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
 
-      span {
-        font-size: 1.2rem;
-        color: #f59e0b;
-        white-space: nowrap;
-        padding: 15px;
-        flex: 1;
-      }
+  .marquee span {
+    font-size: 1.2rem;
+    color: #f59e0b;
+    white-space: nowrap;
+    padding: 15px;
+    display: inline-block;
+    animation: marquee-rtl 12s linear infinite;
+  }
+
+  @keyframes marquee-rtl {
+    0% {
+      transform: translateX(50%);
+    }
+    100% {
+      transform: translateX(-100%);
     }
   }
 
