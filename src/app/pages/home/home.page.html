@@ -87,32 +87,125 @@
     </ion-row>
   </ion-grid>
   <!-------------------- Project-Modal--------------------------->
-  <ion-modal [isOpen]="isModalOpen" [backdropDismiss]="true" (didDismiss)="setOpen(false)">
-    <ng-template>
-      <ion-header>
-        <ion-toolbar>
-          <ion-title>{{ 'Project Details' }}</ion-title>
-          <ion-buttons slot="end">
-            <ion-button (click)="setOpen(false)">Close</ion-button>
-          </ion-buttons>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content class="ion-padding">
-        <ion-item class="d-flex" lines="none">
-          <h1>{{ selectedProject?.title }}</h1>
-          <a [href]="selectedProject?.link" target="_blank" slot="end">
-            <ion-chip>
-              <ion-icon name="link"></ion-icon>
-              <ion-label>Get link</ion-label>
-              <ion-icon name="logo-github" color="primary"></ion-icon>
-            </ion-chip>
-          </a>
-        </ion-item>
-        <h3>{{ selectedProject?.subtitle }}</h3>
-        <p>{{ selectedProject?.description }}</p>
-      </ion-content>
-    </ng-template>
-  </ion-modal>
+  <ion-modal 
+  [isOpen]="isModalOpen" 
+  [backdropDismiss]="true" 
+  (didDismiss)="setOpen(false)"
+  [breakpoints]="[0, 0.25, 0.5, 0.85, 1]"
+  [initialBreakpoint]="0.85"
+  class="project-modal">
+  <ng-template>
+    <div class="modal-container">
+      <!-- Header with close button -->
+      <div class="modal-header">
+        <div class="header-content">
+          <div class="header-left">
+            <div class="project-avatar">
+              <ion-icon name="cube-outline"></ion-icon>
+            </div>
+            <div class="header-text">
+              <h2 class="modal-title">Project Details</h2>
+              <p class="modal-subtitle">Explore the details</p>
+            </div>
+          </div>
+          <button class="close-btn" (click)="setOpen(false)">
+            <ion-icon name="close"></ion-icon>
+          </button>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="modal-content">
+        <!-- Project Hero Card -->
+        <div class="hero-card">
+          <div class="hero-background">
+            <div class="hero-pattern"></div>
+          </div>
+          <div class="hero-content">
+            <div class="project-badge">
+              <ion-icon name="code-slash"></ion-icon>
+              <span>Project</span>
+            </div>
+            <h1 class="project-name">{{ selectedProject?.title }}</h1>
+            <p class="project-tagline">{{ selectedProject?.subtitle }}</p>
+            
+            <!-- GitHub Link -->
+            <a [href]="selectedProject?.link" target="_blank" class="github-button">
+              <div class="button-content">
+                <ion-icon name="logo-github"></ion-icon>
+                <span>View on GitHub</span>
+                <ion-icon name="arrow-forward"></ion-icon>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Description Card -->
+        <div class="content-card">
+          <div class="card-header">
+            <div class="card-icon">
+              <ion-icon name="document-text"></ion-icon>
+            </div>
+            <h3>About this project</h3>
+          </div>
+          <div class="card-body">
+            <p class="description-text">{{ selectedProject?.description }}</p>
+          </div>
+        </div>
+
+        <!-- Features Grid -->
+        <div class="features-grid">
+          <div class="feature-item">
+            <div class="feature-icon tech">
+              <ion-icon name="construct"></ion-icon>
+            </div>
+            <div class="feature-content">
+              <h4>Modern Tech</h4>
+              <p>Built with latest technologies</p>
+            </div>
+          </div>
+          
+          <div class="feature-item">
+            <div class="feature-icon mobile">
+              <ion-icon name="phone-portrait"></ion-icon>
+            </div>
+            <div class="feature-content">
+              <h4>Mobile First</h4>
+              <p>Responsive design approach</p>
+            </div>
+          </div>
+          
+          <div class="feature-item">
+            <div class="feature-icon performance">
+              <ion-icon name="flash"></ion-icon>
+            </div>
+            <div class="feature-content">
+              <h4>Performance</h4>
+              <p>Optimized for speed</p>
+            </div>
+          </div>
+          
+          <div class="feature-item">
+            <div class="feature-icon open">
+              <ion-icon name="lock-open"></ion-icon>
+            </div>
+            <div class="feature-content">
+              <h4>Open Source</h4>
+              <p>Available on GitHub</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Footer -->
+        <div class="action-footer">
+          <div class="footer-text">
+            <p>Like what you see? Check out the code and contribute!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</ion-modal>
 
   <!-- Skills Section -->
   <ion-grid class="skills-grid" id="skillsSection" style="--ion-grid-padding: 0px">

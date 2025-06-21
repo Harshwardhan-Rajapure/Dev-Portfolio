@@ -33,7 +33,7 @@ import {
   logoLinkedin,
   logoGithub,
   logoInstagram,
-  openOutline, documentTextOutline, pin, close, link, cloudUploadOutline, callOutline, mailOutline, helpCircleOutline, repeatOutline, locationOutline, cloudDownloadOutline, chatbubbleOutline, add, colorPalette, globe } from 'ionicons/icons'
+  openOutline, documentTextOutline, pin, close, link, cloudUploadOutline, callOutline, mailOutline, helpCircleOutline, repeatOutline, locationOutline, cloudDownloadOutline, chatbubbleOutline, add, colorPalette, globe, folderOpen, codeSlash, star, cubeOutline, arrowForward, construct, phonePortrait, flash, lockOpen, documentText } from 'ionicons/icons'
 import { NavbarComponent } from 'src/app/components/navbar/navbar.component'
 import { Project, Projects, Skill, Skills } from './enums/projectsInfo.enum'
 import { CommonModule } from '@angular/common'
@@ -87,7 +87,7 @@ export class HomePage {
   contactForm!: FormGroup;
   
   constructor(private fb: FormBuilder, private route: ActivatedRoute) {
-    addIcons({logoFacebook,logoWhatsapp,logoLinkedin,logoGithub,logoInstagram,openOutline,cloudDownloadOutline,documentTextOutline,link,cloudUploadOutline,locationOutline,repeatOutline,callOutline,mailOutline,chatbubbleOutline,add,colorPalette,globe,helpCircleOutline,pin,close,});
+    addIcons({logoFacebook,logoWhatsapp,logoGithub,logoLinkedin,logoInstagram,openOutline,cloudDownloadOutline,documentTextOutline,cubeOutline,close,codeSlash,arrowForward,documentText,construct,phonePortrait,flash,lockOpen,locationOutline,repeatOutline,callOutline,mailOutline,chatbubbleOutline,folderOpen,star,link,cloudUploadOutline,add,colorPalette,globe,helpCircleOutline,pin,});
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
       emailOrMobile: ['', Validators.required],

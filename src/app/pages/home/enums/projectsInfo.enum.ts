@@ -10,32 +10,32 @@
 export const Projects: Project[] = [
     {
       title: 'Portfolio Website',
-      subtitle: 'ProjectCategory.WEB',
+      subtitle: '',
       description: 'A personal portfolio built using Ionic and Angular.A personal portfolio built using Ionic and Angular',
-      image: 'https://ionicframework.com/docs/img/demos/card-media.png',
+      image: 'assets/images/Screenshot 2025-06-21 140916.png',
       link: 'https://github.com/Harshwardhan-Rajapure',
     },
     {
-      title: 'ChatBot AI',
-      subtitle: 'ProjectCategory.AI',
-      description: 'An AI-powered chatbot for customer support automation.',
-      image: 'https://ionicframework.com/docs/img/demos/card-media.png',
+      title: 'Chat Application',
+      subtitle: '',
+      description: 'Ionic-Angular-ChatApp-using-Firebase',
+      image: 'assets/images/Screenshot 2025-06-21 142231.png',
       link: 'https://github.com/Harshwardhan-Rajapure',
     },
     {
       title: 'E-Commerce App',
-      subtitle: 'ProjectCategory.MOBILE',
+      subtitle: '',
       description: 'A mobile-friendly shopping app with a clean UI and responsive.',
-      image: 'https://ionicframework.com/docs/img/demos/card-media.png',
+      image: '/assets/images/Screenshot 2025-06-21 144125.png',
       link: 'https://github.com/Harshwardhan-Rajapure',
     },
-    {
-      title: 'Open Source Contribution Open Source Contribution',
-      subtitle: 'ProjectCategory.OPEN_SOURCEProjectCategory.OPEN_SOURCEProjectCategory.OPEN_SOURCE',
-      description: 'Contributed to various open-source repositories on GitHub.Contributed to various open-source repositories on GitHub',
-      image: 'https://ionicframework.com/docs/img/demos/card-media.png',
-      link: 'https://github.com/Harshwardhan-Rajapure',
-    },
+    // {
+    //   title: 'Open Source Contribution Open Source Contribution',
+    //   subtitle: '',
+    //   description: 'Contributed to various open-source repositories on GitHub.Contributed to various open-source repositories on GitHub',
+    //   image: 'https://ionicframework.com/docs/img/demos/card-media.png',
+    //   link: 'https://github.com/Harshwardhan-Rajapure',
+    // },
   ];
 
   // -------------Skills Section---------------------------------
